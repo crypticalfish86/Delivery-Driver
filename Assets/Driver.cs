@@ -21,16 +21,22 @@ public class Driver : MonoBehaviour
         /*
             every frame calculate the amount the car is steering
             It is then mutiplied by steerSpeed so we are able to
-            change how fast we turn
+            change how fast we turn. 
+
+            The value is then finally multipleid by Time.deltaTime to make
+            the value frame rate independent
         */
-        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed;
+        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;
 
         /*
             Every frame calculate the speed of the car It is 
             then multiplied by moveSpeed so we are able to change
             how fast the car is moving back and forth
+
+            The value is then finally multipleid by Time.deltaTime to make
+            the value frame rate independent
         */
-        float moveAmount = Input.GetAxis("Vertical") * moveSpeed;
+        float moveAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         
         /*Every frame rotate car on the (x, y, z) axis using inputs in unity (directions inverted)*/
         transform.Rotate(0, 0, -steerAmount);
