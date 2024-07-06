@@ -8,7 +8,7 @@ public class Driver : MonoBehaviour
     void Start()
     {
         /*Rotate our car on the (x, y, z) axis (at start)*/
-        transform.Rotate(0, 0, 45);
+        //transform.Rotate(0, 0, 45);
     }
 
     // Update is called once per frame
@@ -17,5 +17,8 @@ public class Driver : MonoBehaviour
         /*Every frame rotate car 45 degrees
         the f at the end of 0.1f is to tell unity its a float*/
         transform.Rotate(0, 0, 0.1f);
+
+        /*Every frame move our car forward*/
+        transform.Translate(0, 0.01f , 0);
     }
 }
